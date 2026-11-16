@@ -563,6 +563,180 @@
       color: var(--primary);
     }
 
+    /* On-Demand Stock Search Card */
+    .search-section-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .search-header {
+      margin-bottom: 14px;
+    }
+
+    .search-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .search-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .search-input-group {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      position: relative;
+    }
+
+    .search-input-wrapper {
+      flex: 1;
+      position: relative;
+    }
+
+    .search-input-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-sub);
+      pointer-events: none;
+    }
+
+    .search-input {
+      width: 100%;
+      background: var(--card-inner);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      border-radius: var(--radius-sm);
+      height: 44px;
+      padding: 0 16px 0 42px;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.15s ease;
+    }
+    .search-input:focus {
+      border-color: var(--primary);
+    }
+
+    .search-autocomplete-box {
+      display: none;
+      position: absolute;
+      top: 48px;
+      left: 0;
+      right: 0;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow);
+      z-index: 100;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    .autocomplete-item {
+      padding: 10px 16px;
+      font-size: 13px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .autocomplete-item:last-child { border-bottom: none; }
+    .autocomplete-item:hover { background: var(--hover-bg); }
+
+    .btn-analyze {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      height: 44px;
+      padding: 0 20px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 2px 4px rgba(37, 99, 235, 0.25);
+      transition: all 0.15s ease;
+      flex-shrink: 0;
+    }
+    .btn-analyze:hover:not(:disabled) {
+      background: var(--primary-hover);
+    }
+    .btn-analyze:disabled {
+      background: var(--border);
+      color: var(--text-muted);
+      cursor: not-allowed;
+    }
+
+    .quick-chips {
+      margin-top: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .chips-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-sub);
+    }
+    .chip-btn {
+      background: var(--card-inner);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .chip-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .search-status-banner {
+      margin-top: 14px;
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .search-status-banner.info {
+      background: var(--primary-light);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      color: var(--primary);
+    }
+    .search-status-banner.success {
+      background: var(--green-bg);
+      border: 1px solid var(--green-border);
+      color: var(--green-text);
+    }
+    .search-status-banner.error {
+      background: var(--rose-bg);
+      border: 1px solid var(--rose-border);
+      color: var(--rose-text);
+    }
+
     /* Verdicts Feed */
     .verdicts-card {
       background: var(--card-bg);
@@ -1141,6 +1315,10 @@
         width: 100%;
         text-align: left;
       }
+      .search-input-group {
+        flex-direction: column;
+        align-items: stretch;
+      }
     }
   </style>
 </head>
@@ -1200,7 +1378,7 @@
           <span class="pulse-dot"></span>
           NSE FEED: STREAMING
         </span>
-        <span id="activity-msg">Ready. Click 'Start agents' to begin multi-agent equity analysis.</span>
+        <span id="activity-msg">Ready. Click 'Start agents' or search any stock below to begin analysis.</span>
       </div>
       <div id="activity-time" style="font-size: 12px; color: var(--text-muted); font-variant-numeric: tabular-nums;">-</div>
     </div>
@@ -1241,6 +1419,52 @@
       <!-- 8 Agent Cards injected dynamically -->
     </div>
 
+    <!-- On-Demand Stock Search Card -->
+    <div class="search-section-card">
+      <div class="search-header">
+        <div class="search-title">
+          <svg class="icon" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          On-Demand Stock Research & Verdict
+        </div>
+        <div class="search-sub">Enter any Indian stock symbol to run the full 8-agent analysis, valuation debate & verdict on demand</div>
+      </div>
+
+      <div class="search-input-group">
+        <div class="search-input-wrapper">
+          <svg class="icon search-input-icon" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="custom-stock-input" class="search-input" placeholder="Search any NSE stock (e.g. INFY, BEL, IRFC, RELIANCE, TCS, ITC)..." autocomplete="off" onkeydown="handleSearchKey(event)" oninput="handleSearchInput(event)">
+          <div class="search-autocomplete-box" id="search-autocomplete"></div>
+        </div>
+        <button id="btn-analyze-stock" class="btn-analyze" onclick="analyzeCustomStock()">
+          <svg class="icon" viewBox="0 0 24 24">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+          <span id="btn-analyze-label">Get Verdict</span>
+        </button>
+      </div>
+
+      <!-- Quick Equity Chips -->
+      <div class="quick-chips">
+        <span class="chips-label">Popular Equities:</span>
+        <button type="button" class="chip-btn" onclick="quickAnalyze('INFY')">INFY</button>
+        <button type="button" class="chip-btn" onclick="quickAnalyze('BEL')">BEL</button>
+        <button type="button" class="chip-btn" onclick="quickAnalyze('IRFC')">IRFC</button>
+        <button type="button" class="chip-btn" onclick="quickAnalyze('ITC')">ITC</button>
+        <button type="button" class="chip-btn" onclick="quickAnalyze('TCS')">TCS</button>
+        <button type="button" class="chip-btn" onclick="quickAnalyze('RELIANCE')">RELIANCE</button>
+        <button type="button" class="chip-btn" onclick="quickAnalyze('HDFCBANK')">HDFCBANK</button>
+        <button type="button" class="chip-btn" onclick="quickAnalyze('BHARTIARTL')">BHARTIARTL</button>
+      </div>
+
+      <div id="search-status-banner" class="search-status-banner" style="display: none;"></div>
+    </div>
+
     <!-- Latest Verdicts Feed -->
     <div class="verdicts-card">
       <div class="verdicts-header">
@@ -1258,7 +1482,7 @@
         <div style="font-size: 12px; color: var(--text-muted);" id="verdicts-count-badge">0 analyzed</div>
       </div>
       <div class="verdict-list" id="verdict-list">
-        <div class="empty-state">No verdicts yet. Select a mode and click <strong>Start agents</strong> to begin.</div>
+        <div class="empty-state">No verdicts yet. Select a mode and click <strong>Start agents</strong> or search any stock above to begin.</div>
       </div>
     </div>
 
@@ -1291,7 +1515,6 @@
   </div>
 
   <script>
-    // Pure SVG vector definitions for each agent (No Emojis)
     const AGENT_SVGS = {
       scout: `<svg class="icon icon-lg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="3"></circle><line x1="12" y1="3" x2="12" y2="21"></line><line x1="3" y1="12" x2="21" y2="12"></line></svg>`,
       technician: `<svg class="icon icon-lg" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>`,
@@ -1309,6 +1532,7 @@
     let pollInterval = null;
     let livePriceInterval = null;
     let previousPrices = {};
+    let searchDebounce = null;
 
     // Theme Management
     function initTheme() {
@@ -1328,10 +1552,8 @@
     function updateThemeIcon(theme) {
       const icon = document.getElementById("theme-icon");
       if (theme === "dark") {
-        // Moon icon
         icon.innerHTML = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>`;
       } else {
-        // Sun icon
         icon.innerHTML = `<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>`;
       }
     }
@@ -1450,6 +1672,119 @@
       document.getElementById("agent-modal").style.display = "none";
     }
 
+    // On-Demand Stock Search & Analysis
+    function handleSearchKey(e) {
+      if (e.key === "Enter") {
+        analyzeCustomStock();
+      }
+    }
+
+    function handleSearchInput(e) {
+      const q = e.target.value.trim();
+      const autoBox = document.getElementById("search-autocomplete");
+      if (!q || q.length < 2) {
+        autoBox.style.display = "none";
+        return;
+      }
+      clearTimeout(searchDebounce);
+      searchDebounce = setTimeout(async () => {
+        try {
+          const resp = await fetch(`/search_symbols?q=${encodeURIComponent(q)}`);
+          if (resp.ok) {
+            const matches = await resp.json();
+            if (matches && matches.length > 0) {
+              autoBox.innerHTML = matches.map(m => `
+                <div class="autocomplete-item" onclick="selectAutocomplete('${m.symbol}')">
+                  <span><strong>${m.symbol}</strong> <span style="font-size: 11px; color: var(--text-sub);">(${m.ticker})</span></span>
+                  <span class="cap-badge">${m.cap}</span>
+                </div>
+              `).join("");
+              autoBox.style.display = "block";
+            } else {
+              autoBox.style.display = "none";
+            }
+          }
+        } catch (err) {
+          autoBox.style.display = "none";
+        }
+      }, 250);
+    }
+
+    function selectAutocomplete(sym) {
+      document.getElementById("custom-stock-input").value = sym;
+      document.getElementById("search-autocomplete").style.display = "none";
+      analyzeCustomStock();
+    }
+
+    // Close autocomplete on click outside
+    document.addEventListener("click", (e) => {
+      const autoBox = document.getElementById("search-autocomplete");
+      if (autoBox && !e.target.closest(".search-input-wrapper")) {
+        autoBox.style.display = "none";
+      }
+    });
+
+    function quickAnalyze(sym) {
+      document.getElementById("custom-stock-input").value = sym;
+      executeStockAnalysis(sym);
+    }
+
+    async function analyzeCustomStock() {
+      const input = document.getElementById("custom-stock-input");
+      const rawSymbol = input.value.trim();
+      if (!rawSymbol) {
+        alert("Please enter a stock ticker symbol (e.g. INFY, BEL, IRFC).");
+        return;
+      }
+      document.getElementById("search-autocomplete").style.display = "none";
+      executeStockAnalysis(rawSymbol);
+    }
+
+    async function executeStockAnalysis(rawSymbol) {
+      const btn = document.getElementById("btn-analyze-stock");
+      const label = document.getElementById("btn-analyze-label");
+      const banner = document.getElementById("search-status-banner");
+
+      btn.disabled = true;
+      label.textContent = "Analyzing...";
+      banner.style.display = "flex";
+      banner.className = "search-status-banner info";
+      banner.innerHTML = `<span class="pulse-dot"></span> Fetching live NSE market data and convening the 8-agent committee for <strong>${rawSymbol.toUpperCase()}</strong>...`;
+
+      try {
+        const resp = await fetch("/analyze_stock", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ symbol: rawSymbol })
+        });
+        const data = await resp.json();
+
+        if (!resp.ok) {
+          banner.className = "search-status-banner error";
+          banner.textContent = data.error || "Analysis failed. Please verify the stock ticker.";
+          btn.disabled = false;
+          label.textContent = "Get Verdict";
+          return;
+        }
+
+        banner.className = "search-status-banner success";
+        const v = data.verdict;
+        banner.innerHTML = `Verdict generated for <strong>${v.symbol}</strong>: <span class="verdict-badge verdict-${v.verdict}" style="margin: 0 4px;">${v.verdict}</span> (Confidence: ${v.confidence}/10, Winner: ${v.winner}). Added to feed.`;
+
+        // Refresh status to re-render feed and auto-expand top card
+        await fetchStatus();
+        toggleDrawer(0);
+
+        btn.disabled = false;
+        label.textContent = "Get Verdict";
+      } catch (e) {
+        banner.className = "search-status-banner error";
+        banner.textContent = "Network error: " + e.message;
+        btn.disabled = false;
+        label.textContent = "Get Verdict";
+      }
+    }
+
     // Start Agents Pipeline
     async function startAgents() {
       const mode = document.getElementById("mode-select").value;
@@ -1536,7 +1871,7 @@
 
         if (oldPrice !== undefined && newPrice !== oldPrice) {
           priceEl.classList.remove("flash-up", "flash-down");
-          void priceEl.offsetWidth; // trigger reflow
+          void priceEl.offsetWidth;
           if (newPrice > oldPrice) {
             priceEl.classList.add("flash-up");
           } else {
@@ -1622,7 +1957,7 @@
       document.getElementById("verdicts-count-badge").textContent = `${verdicts.length} analyzed`;
 
       if (!verdicts || verdicts.length === 0) {
-        list.innerHTML = `<div class="empty-state">No verdicts yet. Select a mode and click <strong>Start agents</strong> to begin.</div>`;
+        list.innerHTML = `<div class="empty-state">No verdicts yet. Select a mode and click <strong>Start agents</strong> or search any stock above to begin.</div>`;
         return;
       }
 
@@ -1632,7 +1967,6 @@
         const confPct = Math.round((v.confidence / 10) * 100);
         const cleanSymbol = v.symbol.replace(".NS", "");
 
-        // Save current price to cache
         if (v.live_price) {
           previousPrices[v.symbol] = v.live_price;
         }

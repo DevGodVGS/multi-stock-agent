@@ -78,28 +78,18 @@ A local, one-click web dashboard that runs a panel of 8 named autonomous agents 
 
 ## Key Features
 
-- **One-Click End-to-End Execution**: A single click orchestrates all 8 agents through `offline` -> `working` -> `done` with visual pacing.
-- **Dual Engine Architecture**:
-  1. **LLM Debate (Preferred)**: Shells out to local `claude` CLI (using your Claude subscription with no API key or per-call costs) or uses Anthropic / OpenAI APIs.
-  2. **Deterministic Fallback**: Built-in 0–100 quantitative rule-based evaluation that works 100% offline with zero dependencies.
-- **Strict Grounding Rule**: Built-in numeric verifier ensures agents never hallucinate financial figures; all cited numbers must trace back directly to the verified evidence bundle.
-- **Telegram BUY Signal Format**:
-  ```
-  🟢 BUY SIGNAL — SYMBOL (Large cap)
-
-  Verdict: BUY | Confidence: 8/10
-
-  Winner: Bull
-
-  Why: Bull conviction (75/100) dominates with confirmed momentum...
-
-  Key catalyst: Breakout structure with 52-week position at 94.7%
-
-  Live price: ₹1340.50 | Day change: +0.06%
-
-  — Analysis only. No trade was placed. Not investment advice.
-  ```
-- **Auditable SQLite Storage**: Every run and every stock verdict is persisted to `stock_agent_audit.db`.
-- **Security & Privacy**: Telegram bot tokens and API keys are completely scrubbed from all logs, UI elements, and API payloads.
+- **On-Demand Stock Research & Verdict:** Search any listed Indian equity (e.g. `INFY`, `BEL`, `IRFC`, `TATAMOTORS`, `RELIANCE`) to convene the 8-agent committee on-demand and produce an instant verdict.
+- **Institutional Dark / Light Theme:** Modern terminal styling with zero emojis, high-contrast typography, and persistent mode toggle.
+- **Continuous Live Price Streamer:** Background engine continually streams real-time NSE price updates with visual uptick/downtick flashes.
+- **Deep Verdict Inspector:** Multi-tab drawer revealing the Bull vs. Bear debate, Technicals matrix (RVOL, 52W range slider, SMA variance), Fundamentals & analyst price targets, and news sentiment.
+- **Agent Telemetry & Specs Modal:** Click any of the 8 agent cards to view their quantitative equations, screening rules, and live cohort telemetry.
+- **Full Market Scanning (499+ Stocks):** Vectorized batch downloading screens the entire official NIFTY 500 index in seconds.
+- **One-Click End-to-End Execution:** A single click orchestrates all 8 agents through `offline` -> `working` -> `done` with visual pacing.
+- **Dual Engine Architecture:**
+  1. **LLM Debate (Preferred):** Shells out to local `claude` CLI (using your Claude subscription with no API key or per-call costs) or uses Anthropic / OpenAI APIs.
+  2. **Deterministic Fallback:** Built-in 0–100 quantitative rule-based evaluation that works 100% offline with zero dependencies.
+- **Strict Grounding Rule:** Built-in numeric verifier ensures agents never hallucinate financial figures; all cited numbers must trace back directly to the verified evidence bundle.
+- **Auditable SQLite Storage:** Every run and every stock verdict is persisted to `stock_agent_audit.db`.
+- **Security & Privacy:** Telegram bot tokens and API keys are completely scrubbed from all logs, UI elements, and API payloads.
 
 *(Data source is yfinance for portability; swap `data_sources.py` for a richer feed — broker API, paid data, or an MCP connector — if you have one. Keep the evidence-bundle shape identical so the scoring engine is unchanged.)*

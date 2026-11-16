@@ -733,6 +733,131 @@ def get_config():
     })
 
 
+@app.route("/analyze_stock", methods=["POST"])
+def analyze_custom_stock():
+    data = request.get_json(silent=True) or {}
+    raw_symbol = data.get("symbol", "").strip()
+    if not raw_symbol:
+        return jsonify({"error": "Symbol is required"}), 400
+
+    symbol = raw_symbol.upper()
+    if not (symbol.endswith(".NS") or symbol.endswith(".BO")):
+        symbol = f"{symbol}.NS"
+
+    import yfinance as yf
+    from data_sources import build_evidence_bundle
+    try:
+        t = yf.Ticker(symbol)
+        hist = t.history(period="1mo")
+        if hist is None or hist.empty:
+            return jsonify({"error": f"No market data found for ticker '{symbol}' on NSE/BSE."}), 404
+
+        info = {}
+        try:
+            info = t.info or {}
+        except Exception:
+            pass
+
+        news = []
+        try:
+            news = t.news or []
+        except Exception:
+            pass
+
+        recs = None
+        try:
+            recs = t.recommendations
+        except Exception:
+            pass
+
+        mcap = info.get("marketCap") or 0
+        if mcap >= 200_000_000_000:
+            cap_segment = "large"
+        elif mcap >= 50_000_000_000:
+            cap_segment = "mid"
+        else:
+            cap_segment = "small"
+
+        evidence = build_evidence_bundle(symbol, cap_segment, info, hist, news, recs)
+        eval_res, engine = evaluate(evidence)
+        v = eval_res.get("verdict", {})
+        scores = eval_res.get("scores", {})
+
+        b_score = v.get("bull_score", 50)
+        br_score = v.get("bear_score", 50)
+        verdict_str = v.get("verdict", "WATCH")
+        conf = v.get("confidence", 5)
+
+        price_info = evidence.get("price", {})
+        verdict_row = {
+            "symbol": symbol,
+            "name": evidence.get("name", symbol),
+            "cap_segment": cap_segment,
+            "sector": evidence.get("sector", "Equities"),
+            "verdict": verdict_str,
+            "confidence": conf,
+            "winner": v.get("winner", "Bull"),
+            "why": v.get("rationale", ""),
+            "key_catalyst": v.get("key_catalyst", ""),
+            "live_price": price_info.get("live", 0.0),
+            "day_change_pct": price_info.get("day_change_pct", 0.0),
+            "bull_score": b_score,
+            "bear_score": br_score,
+            "net": v.get("net", b_score - br_score),
+            "scores": scores,
+            "evidence": evidence,
+            "grounding_warnings": v.get("grounding_warnings", [])
+        }
+
+        with state_lock:
+            existing_idx = next((i for i, existing in enumerate(app_state["verdicts"]) if existing["symbol"] == symbol), None)
+            if existing_idx is not None:
+                app_state["verdicts"][existing_idx] = verdict_row
+            else:
+                app_state["verdicts"].insert(0, verdict_row)
+
+            app_state["kpis"]["in_debate"] = len(app_state["verdicts"])
+            if verdict_str == "BUY":
+                app_state["kpis"]["buy_signals"] = sum(1 for item in app_state["verdicts"] if item.get("verdict") == "BUY")
+                cur_top = app_state["kpis"].get("top_pick")
+                if not cur_top or conf > cur_top.get("confidence", 0):
+                    app_state["kpis"]["top_pick"] = {"symbol": symbol, "confidence": conf}
+
+        return jsonify({
+            "status": "success",
+            "verdict": verdict_row,
+            "engine": engine
+        })
+    except Exception as e:
+        print(f"Error in on-demand analysis for {symbol}: {e}")
+        return jsonify({"error": f"Failed to analyze {symbol}: {str(e)}"}), 500
+
+
+@app.route("/search_symbols", methods=["GET"])
+def search_symbols():
+    query = request.args.get("q", "").strip().upper()
+    if not query:
+        return jsonify([])
+
+    results = []
+    try:
+        if os.path.exists("universe.json"):
+            with open("universe.json", "r", encoding="utf-8") as f:
+                uni = json.load(f)
+            for cap, syms in uni.items():
+                for s in syms:
+                    clean = s.replace(".NS", "")
+                    if query in clean:
+                        results.append({"symbol": clean, "ticker": s, "cap": cap})
+                        if len(results) >= 8:
+                            break
+                if len(results) >= 8:
+                    break
+    except Exception:
+        pass
+    return jsonify(results)
+
+
 if __name__ == "__main__":
     import socket
 
