@@ -1,0 +1,74 @@
+{
+  "symbol": "RELIANCE.NS",
+  "name": "RELIANCE INDUSTRIES LTD",
+  "cap_segment": "large",
+  "sector": "Energy",
+  "price": {
+    "live": 1340.5,
+    "day_open": 1339.7,
+    "day_high": 1347.3,
+    "day_low": 1333.8,
+    "prev_close": 1339.7,
+    "day_change_pct": 0.06,
+    "volume": 4010944
+  },
+  "range_52w": {
+    "high": 1611.8,
+    "low": 1152.2,
+    "pct_from_high": -16.83,
+    "position_pct": 40.97
+  },
+  "technicals": {
+    "rvol": 0.18,
+    "price_vs_sma_pct": 6.74,
+    "window_return_pct": 10.68,
+    "swing_high": 1350.7,
+    "swing_low": 1152.5,
+    "day_range_position_pct": 49.63,
+    "trend": "up"
+  },
+  "analyst": {
+    "consensus": "strong_buy",
+    "num_analysts": 26,
+    "buy_pct": 100.0,
+    "hold_pct": 0.0,
+    "sell_pct": 0.0,
+    "target_mean": 1615.0,
+    "target_low": 1280.0,
+    "target_high": 1890.0,
+    "upside_pct": 20.48
+  },
+  "news": {
+    "total": 10,
+    "positive": 10,
+    "negative": 0,
+    "neutral": 0,
+    "recent": [
+      {
+        "title": "Reliance plans $4.6bn investment in Andhra Pradesh coal-to-gas project",
+        "publisher": "Offshore Technology",
+        "link": "https://finance.yahoo.com/news/reliance-plans-4-6bn-investment-105018840.html",
+        "published": "2026-11-13T10:50:18Z"
+      },
+      {
+        "title": "Reliance Industries Ltd (WBO:RLI) (Q2 2027) Earnings Call Highlights: Record EBITDA and PAT as ...",
+        "publisher": "GuruFocus.com",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/reliance-industries-ltd-wbo-rli-070425946.html",
+        "published": "2026-11-03T07:04:25Z"
+      },
+      {
+        "title": "Reliance Adds Record $19 Billion in Market Value on Profit Beat",
+        "publisher": "Bloomberg",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/reliance-adds-record-19-billion-111336617.html",
+        "published": "2026-11-02T11:13:36Z"
+      },
+      {
+        "title": "3 Oil Stocks Worth Watching If Energy Prices Stay High",
+        "publisher": "Simply Wall St.",
+        "link": "https://finance.yahoo.com/energy/articles/3-oil-stocks-worth-watching-021124324.html",
+        "published": "2026-11-02T02:11:24Z"
+      }
+    ]
+  },
+  "data_gaps": []
+}

@@ -1,0 +1,62 @@
+{
+  "symbol": "POLYCAB.NS",
+  "name": "POLYCAB INDIA LIMITED",
+  "cap_segment": "mid",
+  "sector": "Industrials",
+  "price": {
+    "live": 7920.0,
+    "day_open": 7930.0,
+    "day_high": 7934.0,
+    "day_low": 7846.0,
+    "prev_close": 7904.0,
+    "day_change_pct": 0.2,
+    "volume": 116736
+  },
+  "range_52w": {
+    "high": 10126.0,
+    "low": 6663.0,
+    "pct_from_high": -21.79,
+    "position_pct": 36.3
+  },
+  "technicals": {
+    "rvol": 0.35,
+    "price_vs_sma_pct": 0.96,
+    "window_return_pct": -3.64,
+    "swing_high": 8329.5,
+    "swing_low": 7372.5,
+    "day_range_position_pct": 84.09,
+    "trend": "sideways"
+  },
+  "analyst": {
+    "consensus": "none",
+    "num_analysts": 30,
+    "buy_pct": 90.0,
+    "hold_pct": 6.7,
+    "sell_pct": 3.3,
+    "target_mean": 9924.3,
+    "target_low": 8500.0,
+    "target_high": 11600.0,
+    "upside_pct": 25.31
+  },
+  "news": {
+    "total": 2,
+    "positive": 1,
+    "negative": 0,
+    "neutral": 1,
+    "recent": [
+      {
+        "title": "3 India Stocks Riding The China Plus One Manufacturing Shift",
+        "publisher": "Simply Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/3-india-stocks-riding-china-030919750.html",
+        "published": "2026-10-05T03:09:19Z"
+      },
+      {
+        "title": "Polycab India Ltd (BOM:542652) Q3 2026 Earnings Call Highlights: Record Revenue Growth and ...",
+        "publisher": "GuruFocus.com",
+        "link": "https://finance.yahoo.com/news/polycab-india-ltd-bom-542652-010202128.html",
+        "published": "2026-01-20T01:02:02Z"
+      }
+    ]
+  },
+  "data_gaps": []
+}

@@ -1,0 +1,74 @@
+{
+  "symbol": "HDFCBANK.NS",
+  "name": "HDFC BANK LTD",
+  "cap_segment": "large",
+  "sector": "Financial Services",
+  "price": {
+    "live": 815.7,
+    "day_open": 804.0,
+    "day_high": 817.8,
+    "day_low": 802.4,
+    "prev_close": 804.0,
+    "day_change_pct": 1.46,
+    "volume": 14782729
+  },
+  "range_52w": {
+    "high": 1017.5,
+    "low": 669.2,
+    "pct_from_high": -19.83,
+    "position_pct": 42.06
+  },
+  "technicals": {
+    "rvol": 0.37,
+    "price_vs_sma_pct": 10.89,
+    "window_return_pct": 11.92,
+    "swing_high": 817.85,
+    "swing_low": 669.2,
+    "day_range_position_pct": 86.36,
+    "trend": "up"
+  },
+  "analyst": {
+    "consensus": "strong_buy",
+    "num_analysts": 42,
+    "buy_pct": 95.2,
+    "hold_pct": 4.8,
+    "sell_pct": 0.0,
+    "target_mean": 961.55,
+    "target_low": 830.0,
+    "target_high": 1270.0,
+    "upside_pct": 17.88
+  },
+  "news": {
+    "total": 10,
+    "positive": 3,
+    "negative": 0,
+    "neutral": 7,
+    "recent": [
+      {
+        "title": "WF vs. HDB: Which Stock Should Value Investors Buy Now?",
+        "publisher": "Zacks",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/wf-vs-hdb-stock-value-154003319.html",
+        "published": "2026-11-13T15:40:03Z"
+      },
+      {
+        "title": "Here's Where Investors Turned To As They Fled AI Stocks",
+        "publisher": "Investor's Business Daily",
+        "link": "#",
+        "published": "2026-11-10T20:19:37Z"
+      },
+      {
+        "title": "Asian Equities Traded in the US as American Depositary Receipts Rise Modestly in Tuesday Trading",
+        "publisher": "MT Newswires",
+        "link": "https://finance.yahoo.com/markets/world-indices/articles/asian-equities-traded-us-american-154141712.html",
+        "published": "2026-11-10T15:41:41Z"
+      },
+      {
+        "title": "Standard Chartered hires HDFC executive to lead India private banking arm",
+        "publisher": "Private Banker International",
+        "link": "https://finance.yahoo.com/news/standard-chartered-hires-hdfc-executive-115753321.html",
+        "published": "2026-11-09T11:57:53Z"
+      }
+    ]
+  },
+  "data_gaps": []
+}

@@ -1,0 +1,74 @@
+{
+  "symbol": "CDSL.NS",
+  "name": "CENTRAL DEPO SER (I) LTD",
+  "cap_segment": "small",
+  "sector": "Financial Services",
+  "price": {
+    "live": 1432.9,
+    "day_open": 1454.2,
+    "day_high": 1456.7,
+    "day_low": 1419.0,
+    "prev_close": 1447.0,
+    "day_change_pct": -0.97,
+    "volume": 1107960
+  },
+  "range_52w": {
+    "high": 1673.7,
+    "low": 1116.3,
+    "pct_from_high": -14.39,
+    "position_pct": 56.8
+  },
+  "technicals": {
+    "rvol": 0.69,
+    "price_vs_sma_pct": 9.96,
+    "window_return_pct": 11.35,
+    "swing_high": 1484.8,
+    "swing_low": 1159.1,
+    "day_range_position_pct": 36.87,
+    "trend": "up"
+  },
+  "analyst": {
+    "consensus": "hold",
+    "num_analysts": 15,
+    "buy_pct": 40.0,
+    "hold_pct": 33.3,
+    "sell_pct": 26.7,
+    "target_mean": 1362.47,
+    "target_low": 1140.0,
+    "target_high": 1570.0,
+    "upside_pct": -4.92
+  },
+  "news": {
+    "total": 6,
+    "positive": 2,
+    "negative": 0,
+    "neutral": 4,
+    "recent": [
+      {
+        "title": "Central Depository Services (India) Ltd (NSE:CDSL) (Q2 2027) Earnings Call Highlights: Strong ...",
+        "publisher": "GuruFocus.com",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/central-depository-services-india-ltd-091845544.html",
+        "published": "2026-11-03T09:18:45Z"
+      },
+      {
+        "title": "Caught Out By CDSL's Slide? What Investors Overlooked",
+        "publisher": "Simply Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/caught-cdsls-slide-investors-overlooked-141045965.html",
+        "published": "2026-10-14T14:10:45Z"
+      },
+      {
+        "title": "Central Depository Services (India) Ltd (NSE:CDSL) (Q1 2027) Earnings Call Highlights: Record ...",
+        "publisher": "GuruFocus.com",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/central-depository-services-india-ltd-010218910.html",
+        "published": "2026-08-11T01:02:18Z"
+      },
+      {
+        "title": "India markets regulator penalises depository over 2022 malware attack",
+        "publisher": "Reuters",
+        "link": "https://finance.yahoo.com/news/india-markets-regulator-penalises-depository-144127064.html",
+        "published": "2026-07-20T19:26:01Z"
+      }
+    ]
+  },
+  "data_gaps": []
+}

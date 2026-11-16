@@ -1,0 +1,74 @@
+{
+  "symbol": "KAYNES.NS",
+  "name": "KAYNES TECHNOLOGY IND LTD",
+  "cap_segment": "small",
+  "sector": "Technology",
+  "price": {
+    "live": 3046.0,
+    "day_open": 3087.0,
+    "day_high": 3087.0,
+    "day_low": 2744.0,
+    "prev_close": 3430.0,
+    "day_change_pct": -11.2,
+    "volume": 7511901
+  },
+  "range_52w": {
+    "high": 6347.0,
+    "low": 2744.0,
+    "pct_from_high": -52.01,
+    "position_pct": 8.38
+  },
+  "technicals": {
+    "rvol": 11.38,
+    "price_vs_sma_pct": -6.62,
+    "window_return_pct": -7.16,
+    "swing_high": 3557.0,
+    "swing_low": 2744.0,
+    "day_range_position_pct": 88.05,
+    "trend": "down"
+  },
+  "analyst": {
+    "consensus": "hold",
+    "num_analysts": 22,
+    "buy_pct": 22.7,
+    "hold_pct": 36.4,
+    "sell_pct": 40.9,
+    "target_mean": 3653.18,
+    "target_low": 2790.0,
+    "target_high": 4480.0,
+    "upside_pct": 19.93
+  },
+  "news": {
+    "total": 4,
+    "positive": 2,
+    "negative": 0,
+    "neutral": 2,
+    "recent": [
+      {
+        "title": "Caught Out By Kaynes Technology India's 53% Fall? What Bears Saw",
+        "publisher": "Simply Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/caught-kaynes-technology-indias-53-220908957.html",
+        "published": "2026-11-01T22:09:08Z"
+      },
+      {
+        "title": "Kaynes Technology India Ltd (BOM:543664) Q4 2026 Earnings Call Highlights: Strong Revenue ...",
+        "publisher": "GuruFocus.com",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/kaynes-technology-india-ltd-bom-010209501.html",
+        "published": "2026-05-19T01:02:09Z"
+      },
+      {
+        "title": "Mitsui (TSE:8031) Is Up 7.3% After India OSAT Entry Is Announced Has The Bull Case Changed?",
+        "publisher": "Simply Wall St.",
+        "link": "https://finance.yahoo.com/news/mitsui-tse-8031-7-3-231605206.html",
+        "published": "2026-03-11T23:16:05Z"
+      },
+      {
+        "title": "Mitsui partners with Kaynes for new OSAT facility in India",
+        "publisher": "Verdict",
+        "link": "https://finance.yahoo.com/news/mitsui-partners-kaynes-osat-facility-122247655.html",
+        "published": "2026-03-09T12:22:47Z"
+      }
+    ]
+  },
+  "data_gaps": []
+}

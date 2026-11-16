@@ -1,0 +1,74 @@
+{
+  "symbol": "DIXON.NS",
+  "name": "DIXON TECHNO (INDIA) LTD",
+  "cap_segment": "mid",
+  "sector": "Technology",
+  "price": {
+    "live": 12832.0,
+    "day_open": 12798.0,
+    "day_high": 12856.0,
+    "day_low": 12638.0,
+    "prev_close": 12798.0,
+    "day_change_pct": 0.27,
+    "volume": 128751
+  },
+  "range_52w": {
+    "high": 15775.0,
+    "low": 9600.0,
+    "pct_from_high": -18.66,
+    "position_pct": 52.34
+  },
+  "technicals": {
+    "rvol": 0.33,
+    "price_vs_sma_pct": 6.3,
+    "window_return_pct": 3.99,
+    "swing_high": 13215.0,
+    "swing_low": 10932.0,
+    "day_range_position_pct": 88.99,
+    "trend": "up"
+  },
+  "analyst": {
+    "consensus": "buy",
+    "num_analysts": 27,
+    "buy_pct": 81.5,
+    "hold_pct": 3.7,
+    "sell_pct": 14.8,
+    "target_mean": 14213.15,
+    "target_low": 9082.0,
+    "target_high": 18000.0,
+    "upside_pct": 10.76
+  },
+  "news": {
+    "total": 5,
+    "positive": 1,
+    "negative": 1,
+    "neutral": 3,
+    "recent": [
+      {
+        "title": "Why Dixon Technologies (India) Bears Were Right Before The Drop",
+        "publisher": "Simply Wall St.",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/why-dixon-technologies-india-bears-061443463.html",
+        "published": "2026-10-15T06:14:43Z"
+      },
+      {
+        "title": "After Apple, India\u2019s smartphone manufacturing boom enters new phase with Vivo JV",
+        "publisher": "TechCrunch",
+        "link": "https://finance.yahoo.com/technology/articles/apple-india-smartphone-manufacturing-boom-043620231.html",
+        "published": "2026-07-10T04:36:20Z"
+      },
+      {
+        "title": "India clears Dixon-Vivo JV for domestic smartphone manufacturing",
+        "publisher": "Reuters",
+        "link": "https://finance.yahoo.com/technology/articles/india-clears-dixon-vivo-jv-160116408.html",
+        "published": "2026-07-09T16:01:16Z"
+      },
+      {
+        "title": "Dixon Technologies (India) Ltd (BOM:540699) Q4 2026 Earnings Call Highlights: Strong Annual ...",
+        "publisher": "GuruFocus.com",
+        "link": "https://finance.yahoo.com/news/dixon-technologies-india-ltd-bom-210022224.html",
+        "published": "2026-05-12T21:00:22Z"
+      }
+    ]
+  },
+  "data_gaps": []
+}

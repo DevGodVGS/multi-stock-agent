@@ -1,0 +1,49 @@
+{
+  "symbol": "TRENT.NS",
+  "name": "TRENT LTD",
+  "cap_segment": "mid",
+  "sector": "Consumer Cyclical",
+  "price": {
+    "live": 3190.7,
+    "day_open": 3170.0,
+    "day_high": 3213.6,
+    "day_low": 3168.1,
+    "prev_close": 3165.2,
+    "day_change_pct": 0.81,
+    "volume": 241623
+  },
+  "range_52w": {
+    "high": 4417.8,
+    "low": 2183.67,
+    "pct_from_high": -27.78,
+    "position_pct": 45.07
+  },
+  "technicals": {
+    "rvol": 0.24,
+    "price_vs_sma_pct": 6.9,
+    "window_return_pct": 7.84,
+    "swing_high": 3238.0,
+    "swing_low": 2676.2,
+    "day_range_position_pct": 49.67,
+    "trend": "up"
+  },
+  "analyst": {
+    "consensus": "buy",
+    "num_analysts": 27,
+    "buy_pct": 81.5,
+    "hold_pct": 14.8,
+    "sell_pct": 3.7,
+    "target_mean": 3397.35,
+    "target_low": 2815.0,
+    "target_high": 4374.0,
+    "upside_pct": 6.48
+  },
+  "news": {
+    "total": 0,
+    "positive": 0,
+    "negative": 0,
+    "neutral": 0,
+    "recent": []
+  },
+  "data_gaps": []
+}

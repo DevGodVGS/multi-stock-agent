@@ -1,0 +1,74 @@
+{
+  "symbol": "TCS.NS",
+  "name": "TATA CONSULTANCY SERV LT",
+  "cap_segment": "large",
+  "sector": "Technology",
+  "price": {
+    "live": 2396.0,
+    "day_open": 2435.0,
+    "day_high": 2449.9,
+    "day_low": 2393.0,
+    "prev_close": 2407.5,
+    "day_change_pct": -0.48,
+    "volume": 1024965
+  },
+  "range_52w": {
+    "high": 3350.0,
+    "low": 1976.8,
+    "pct_from_high": -28.48,
+    "position_pct": 30.53
+  },
+  "technicals": {
+    "rvol": 0.22,
+    "price_vs_sma_pct": -3.37,
+    "window_return_pct": -2.8,
+    "swing_high": 2625.0,
+    "swing_low": 2375.7,
+    "day_range_position_pct": 5.27,
+    "trend": "down"
+  },
+  "analyst": {
+    "consensus": "buy",
+    "num_analysts": 40,
+    "buy_pct": 60.0,
+    "hold_pct": 30.0,
+    "sell_pct": 10.0,
+    "target_mean": 2370.38,
+    "target_low": 1920.0,
+    "target_high": 3266.0,
+    "upside_pct": -1.07
+  },
+  "news": {
+    "total": 10,
+    "positive": 6,
+    "negative": 0,
+    "neutral": 4,
+    "recent": [
+      {
+        "title": "From pilot to fleet: Automa 2026 on scaling digital offshore",
+        "publisher": "Offshore Technology",
+        "link": "https://finance.yahoo.com/news/pilot-fleet-automa-2026-scaling-163907912.html",
+        "published": "2026-10-20T16:39:07Z"
+      },
+      {
+        "title": "Satya Nadella went from H-1B worker to Microsoft CEO. The Trump administration just shut that path for his employees",
+        "publisher": "Fortune",
+        "link": "https://finance.yahoo.com/technology/articles/satya-nadella-went-h-1b-193752422.html",
+        "published": "2026-10-12T19:37:52Z"
+      },
+      {
+        "title": "Why Infosys Can Shrug Off the US Green-Card Suspension, For Now",
+        "publisher": "TIKR",
+        "link": "https://finance.yahoo.com/markets/stocks/articles/why-infosys-shrug-off-us-065617881.html",
+        "published": "2026-10-11T06:56:17Z"
+      },
+      {
+        "title": "Infosys sees no material impact from U.S. PERM suspension",
+        "publisher": "Investing.com",
+        "link": "https://finance.yahoo.com/technology/articles/infosys-sees-no-material-impact-204406039.html",
+        "published": "2026-10-10T20:44:06Z"
+      }
+    ]
+  },
+  "data_gaps": []
+}
